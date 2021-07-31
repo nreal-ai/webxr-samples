@@ -85,7 +85,9 @@ function isPowerOfTwo(n) {
 export function createWebGLContext(glAttribs) {
   glAttribs = glAttribs || {alpha: false};
 
-  let webglCanvas = document.createElement('canvas');
+  const webglCanvas = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' );
+	webglCanvas.style.display = 'block';
+  //let webglCanvas = document.createElement('canvas');
   let contextTypes = glAttribs.webgl2 ? ['webgl2'] : ['webgl', 'experimental-webgl'];
   let context = null;
 
