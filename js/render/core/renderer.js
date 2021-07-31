@@ -83,7 +83,14 @@ function isPowerOfTwo(n) {
 
 // Creates a WebGL context and initializes it with some common default state.
 export function createWebGLContext(glAttribs) {
-  glAttribs = glAttribs || {alpha: false};
+  glAttribs = glAttribs || {alpha: true,
+    depth:true,
+    stencil: true,
+    antialias: true,
+    powerPreference: 'high-performance',
+    premultipliedAlpha: true,
+    preserveDrawingBuffer: false,
+    failIfMajorPerformanceCaveat: false };
 
   const webglCanvas = document.createElementNS( 'http://www.w3.org/1999/xhtml', 'canvas' );
 	webglCanvas.style.display = 'block';
